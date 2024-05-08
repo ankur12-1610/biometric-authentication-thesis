@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "description": "An example Snap written in TypeScript.",
+  "proposedName": "TypeScript Example Snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ankur12-1610/snapx"
+  },
+  "source": {
+    "shasum": "OM3oquewsMH6Og0qeVz2hky/8mXLkw3mcKhm2WsOjS8=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": true
+    },
+    "snap_getBip44Entropy": [
+      {
+        "coinType": 60
+      }
+    ],
+    "snap_confirm": {},
+    "snap_notify": {},
+    "snap_manageState": {},
+    "endowment:long-running": {},
+    "endowment:cronjob": {
+      "jobs": [
+        {
+          "expression": "5 * * * *",
+          "request": {
+            "method": "daos"
+          }
+        },
+        {
+          "expression": "* * * * *",
+          "request": {
+            "method": "txRecieve"
+          }
+        }
+      ]
+    },
+    "endowment:network-access": {},
+    "endowment:transaction-insight": {}
+  },
+  "manifestVersion": "0.1"
+}
